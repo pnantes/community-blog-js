@@ -1,4 +1,9 @@
+import LoginRequest from "./login.js";
+
+console.log(LoginRequest.loginInput)
+
 class HomePage {
+    // static base_url = "https://blog-m2.herokuapp.com/users/register";
 
     static header() {
         const header = document.createElement("header");
