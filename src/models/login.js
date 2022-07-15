@@ -30,8 +30,10 @@ export default class LoginRequest {
         return res.json()
       })
       .then((res) => {
-        localStorage.setItem("@kenzie:user", JSON.stringify(res.response))
-        localStorage.setItem("@kenzie:token", JSON.stringify(res.token))
+        localStorage.setItem("@kenzie:id", res.userId)
+        localStorage.setItem("@kenzie:token", res.token)
+        
+        // localStorage.setItem("@kenzie:token", JSON.stringify(res.token))
 
         window.location.href = 'homePage.html'
 
