@@ -29,7 +29,11 @@ export default class UserRequests {
       body: JSON.stringify(criaUserDados)
     })
       .then(res => res.json())
-      .then(res => console.log('oi'))
+      .then(res => {
+        localStorage.setItem("@kenzie:username", JSON.stringify(res.username))
+        localStorage.setItem("@kenzie:email", JSON.stringify(res.email))
+        localStorage.setItem("@kenzie:avatarUrl", JSON.stringify(res.avatarUrl))
+      })
       .then(res => window.location = "src/views/login.html")
       .catch(err => console.log(err))
   }

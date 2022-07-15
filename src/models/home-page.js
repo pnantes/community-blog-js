@@ -1,13 +1,14 @@
 
 class HomePage {
 
-
     static token = JSON.parse(localStorage.getItem("@kenzie:token"));
-    static name = JSON.parse(localStorage.getItem("@kenzie:username"));
+    static name = JSON.parse(localStorage.getItem("@kenzie:user"));
     static email = JSON.parse(localStorage.getItem("@kenzie:email"));
     static image = JSON.parse(localStorage.getItem("@kenzie:avatarUrl"));
 
     static header() {
+        console.log(this.image)
+        const body = document.querySelector('.body')
         const header = document.createElement("header");
         const div = document.createElement("div");
         const figure = document.createElement("figure");
@@ -29,10 +30,10 @@ class HomePage {
         figure.append(img);
         div.append(figure, divButton);
         header.append(div);
-        this.body.append(header);
+        body.append(header);
 
 
-        if (JSON.parse(localStorage.getItem("@kenzie:user")) !== null) {
+        if (JSON.parse(localStorage.getItem("@kenzie:username")) !== null) {
             button.innerText = "Logout";
             button.addEventListener("click", (event) => {
                 event.preventDefault();
@@ -41,11 +42,10 @@ class HomePage {
                 window.location.reload(true);
             });
         }
-
     }
 
     static main() {
-
+        const body = document.querySelector('.body')
         const main = document.createElement("main");
         const divMain = document.createElement("div");
         const divUser = document.createElement("div");
@@ -58,11 +58,11 @@ class HomePage {
         divTexto.append(h2, pArtigo);
         divMain.append(divUser, divTexto);
         main.append(divMain);
-        this.body.append(main);
+        body.append(main);
 
         img.src = this.image;
         img.alt = "Avatar Usuário";
-        h2.innerText = `${this.username}`;
+        h2.innerText = `${this.name}`;
 
         // pArtigo.innerText = '';
 
@@ -95,3 +95,6 @@ class HomePage {
 
     }
 }
+
+HomePage.header()
+HomePage.main()

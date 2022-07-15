@@ -1,6 +1,6 @@
 
 export default class LoginRequest {
-  // static base_url = 'https://blog-m2.herokuapp.com/users/login'
+  static base_url = 'https://blog-m2.herokuapp.com/users/login'
 
   static loginInput() {
     const inputLogin = document.querySelectorAll(".inputLogin");
@@ -18,6 +18,7 @@ export default class LoginRequest {
   }
 
   static async login(loginData) {
+    console.log(loginData)
     return await fetch(this.base_url, {
       method: "POST",
       headers: {
@@ -31,8 +32,8 @@ export default class LoginRequest {
       .then((res) => {
         localStorage.setItem("@kenzie:user", JSON.stringify(res.response))
         localStorage.setItem("@kenzie:token", JSON.stringify(res.token))
-        localStorage.setItem("@kenzie:token", JSON.stringify(res.token))
-        // return res
+
+        window.location.href = 'homePage.html'
 
       })
       .catch(err => console.log(err))
@@ -47,8 +48,8 @@ function criaObjetoLogin(data) {
   const senha = data[1];
 
   const objetoLogin = {
-    email : email,
-    password : senha
+    email: email,
+    password: senha
   }
   return objetoLogin;
 }
