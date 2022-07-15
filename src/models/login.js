@@ -31,6 +31,7 @@ export default class LoginRequest {
       .then((res) => {
         localStorage.setItem("@kenzie:user", JSON.stringify(res.response))
         localStorage.setItem("@kenzie:token", JSON.stringify(res.token))
+        localStorage.setItem("@kenzie:token", JSON.stringify(res.token))
         // return res
 
       })

@@ -1,9 +1,11 @@
-import LoginRequest from "./login.js";
-
-console.log(LoginRequest.loginInput)
 
 class HomePage {
-    // static base_url = "https://blog-m2.herokuapp.com/users/register";
+
+
+    static token = JSON.parse(localStorage.getItem("@kenzie:token"));
+    static name = JSON.parse(localStorage.getItem("@kenzie:username"));
+    static email = JSON.parse(localStorage.getItem("@kenzie:email"));
+    static image = JSON.parse(localStorage.getItem("@kenzie:avatarUrl"));
 
     static header() {
         const header = document.createElement("header");
@@ -18,7 +20,7 @@ class HomePage {
         divButton.classList.add("header__button");
         button.classList.add("button");
 
-        img.src = "";
+        img.src = this.image;
         img.alt = "Avatar Usuário";
 
         button.type = "button";
@@ -34,8 +36,8 @@ class HomePage {
             button.innerText = "Logout";
             button.addEventListener("click", (event) => {
                 event.preventDefault();
-                localStorage.removeItem("@kenzie-:user");
-                localStorage.removeItem("@kenzie-:token");
+                localStorage.removeItem("@kenzie:username");
+                localStorage.removeItem("@kenzie:token");
                 window.location.reload(true);
             });
         }
@@ -58,13 +60,13 @@ class HomePage {
         main.append(divMain);
         this.body.append(main);
 
-        img.src = "";
+        img.src = this.image;
         img.alt = "Avatar Usuário";
-        // h2.innerText = `${}`;
+        h2.innerText = `${this.username}`;
 
         // pArtigo.innerText = '';
 
-        if (JSON.parse(localStorage.getItem("@kenzie-pets:user"))) { //=== userdopost (validação com token)
+        if (JSON.parse(localStorage.getItem("@kenzie:token"))) { //=== userdopost (validação com token)
             const divButtons = document.createElement("div");
             const pEdita = document.createElement("p"); //editar
             const pApaga = document.createElement("p"); //apagar
