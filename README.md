@@ -1,66 +1,51 @@
-🏁 Entrega - Blog M2
-===================
+# Community Blog 💬
 
-Introdução
-----------
+Aplicação web de uma comunidade de posts, desenvolvida durante minha formação em Desenvolvimento Front-End na Kenzie Academy Brasil, em 2022.
 
-A ideia desse projeto é simular uma comunidade, onde todos os membros
-cadastrados podem consumir, criar, atualizar e deletar publicações de
-texto. Também por em pratica o fluxo de autenticação em APIs.
+O projeto permite que usuários realizem cadastro e login, acessem uma área autenticada e interajam com um feed de publicações integrado a uma API.
 
-Tarefas
--------
+## Funcionalidades
 
-**Importante!**
+- Cadastro de usuário
+- Login e autenticação
+- Redirecionamento após autenticação
+- Persistência de dados da sessão no LocalStorage
+- Exibição dos dados do usuário autenticado
+- Exibição de avatar e nome do usuário
+- Listagem de publicações da comunidade
+- Criação de novas publicações
+- Logout
+- Comunicação com API utilizando Fetch
 
--   Leia a
-    [documentação](https://gitlab.com/-/snippets/2363840)
-    da API para conhecer seus endpoints e como trabalhar em cada um
-    deles.
+## Tecnologias e conceitos
 
-1.  Construa uma página de cadastro, com um formulário que receba esses
-    dados:
+- HTML
+- CSS
+- JavaScript
+- Fetch API
+- API REST
+- LocalStorage
+- Autenticação com token
+- Programação Orientada a Objetos
+- Manipulação do DOM
+- JavaScript assíncrono
+- Git e GitHub
 
-        {
-            "username": "username", // Um nome de usuário único de até 12 digitos.
-            "email": "mail@mail.com", // Um e-mail único para cada usuário.
-            "avatarUrl": "https://github.com/wence-.png", // O link de uma imagem para o avatar do usuário.
-            "password": "123" // com, pelo menos: 6 dígitos, 1 letra maiúscula e 1 número.
-        }
+## Estrutura
 
-2.  Construa uma página de login, com um formulário que recebe um
-    **email** e uma **senha**. **O usuário só poderá ser redirecionado a
-    pagina principal do seu projeto se o login for bem sucedido,
-    retornando um token e o id do usuário.**
+O projeto foi organizado separando responsabilidades entre:
 
-3.  Construa uma pagina principal, onde o usuário autenticado pode **escrever**
-    um post e **ler** todos os posts existentes na API.
+- `models` — lógica das páginas e construção dinâmica da interface
+- `controller` — comunicação com a API e gerenciamento das requisições
+- `views` — páginas da aplicação
+- `styles` — estilização da interface
 
-4.  O dono do post deverá ter a opção de atualizar ou deletar esse
-    recurso. **APENAS o dono pode modificar ou excluir, nenhum outro
-    usuário deve conseguir fazer isso.** *Na API já existe uma validação
-    para isso, mas garanta que essa funcionalidade fique intuitiva no
-    front-end.*
+A aplicação utiliza classes JavaScript e métodos assíncronos para realizar a comunicação com a API e atualizar dinamicamente os elementos da página.
 
-5.  As páginas precisam estar separadas, cada uma estruturada em um
-    arquivo HTML e com arquivos JS separados.
+## Contexto
 
-6.  Faça a versão mobile da aplicação.
-  
-7.  Aplique os conceitos de POO e Local Storage.
+Projeto acadêmico desenvolvido em 2022 durante minha formação em Desenvolvimento Front-End na Kenzie Academy Brasil.
 
-**Aviso!**
+O código foi preservado em seu estado original, incluindo funcionalidades em desenvolvimento na época, como edição e exclusão de publicações.
 
--   Não esqueça que alguns endpoints necessitam de autenticação para a
-    requisição ser bem sucedida, veja na documentação quais exigem isso.
--   Caso tenha dúvidas, reveja as atividadas 'Manipulando Token'.
-
-Entrega
--------
-
-Faça o push do código para o seu repositório GitHub e implemente-o
-GitHub pages. Coloque seu repositório como **Privado** e adicione em
-**Configurações > Colaboradores e Times** o time **team-m2-correcoes**. No
-Canvas, por favor, envie sua url do GitHub Pages: (ex:
-https://nomedeusuario.github.io/oregon-trail-inheritance) e envie o link
-do seu repositório nos comentários.
+Este repositório faz parte do meu histórico de aprendizado e evolução em desenvolvimento web.
